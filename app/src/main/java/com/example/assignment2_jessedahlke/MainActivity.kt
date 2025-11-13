@@ -32,12 +32,15 @@ class MainActivity : ComponentActivity() {
                         onImplicitClick = {
                             val intent = Intent("com.example.assignment2_jessedahlke.ACTION_VIEW_CHALLENGES")
                             startActivity(intent)
+                        },
+                        onViewImageClick = {
+                            val intent = Intent(this, ImageActivity::class.java)
+                            startActivity(intent)
                         }
                     )
                 }
             }
         }
-
     }
 }
 
@@ -45,7 +48,8 @@ class MainActivity : ComponentActivity() {
 fun MainScreen(
     modifier: Modifier = Modifier,
     onExplicitClick: () -> Unit,
-    onImplicitClick: () -> Unit
+    onImplicitClick: () -> Unit,
+    onViewImageClick: () -> Unit
 ) {
     Column(
         modifier = modifier
@@ -72,9 +76,19 @@ fun MainScreen(
 
         Button(
             onClick = onImplicitClick,
-            modifier = Modifier.width(250.dp)
+            modifier = Modifier
+                .padding(bottom = 16.dp)
+                .width(250.dp)
         ) {
             Text("Start Activity Implicitly")
+        }
+
+        // New button for View Image Activity
+        Button(
+            onClick = onViewImageClick,
+            modifier = Modifier.width(250.dp)
+        ) {
+            Text("View Image Activity")
         }
     }
 }
