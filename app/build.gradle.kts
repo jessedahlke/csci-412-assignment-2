@@ -56,4 +56,16 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
+    androidTestImplementation(kotlin("test"))
+
+    // Core AndroidX testing framework (for AndroidJUnit4)
+    androidTestImplementation("androidx.test.ext:junit:1.3.0")
+
+    // UI Automator Library: THIS IS THE FIX for 'uiautomator'
+    // Use the latest stable version (2.2.0 is common and stable)
+    androidTestImplementation("androidx.test.uiautomator:uiautomator:2.2.0")
+
+    debugImplementation("androidx.compose.ui:ui-tooling")
+    debugImplementation("androidx.compose.ui:ui-test-manifest")
+
 }
