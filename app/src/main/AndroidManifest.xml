@@ -18,8 +18,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Assignment2_JesseDahlke">
 
-        <!-- Protected exported SecondActivity
-             Note: the action below matches the implicit intent in your MainActivity exactly -->
+        <!-- Protected exported SecondActivity -->
         <activity
             android:name=".SecondActivity"
             android:exported="true"
@@ -40,11 +39,10 @@
             </intent-filter>
         </activity>
 
-        <!-- ImageActivity: keep exported but NOT a launcher -->
+        <!-- ImageActivity -->
         <activity
             android:name=".ImageActivity"
             android:exported="true">
-            <!-- no launcher intent-filter here -->
         </activity>
     </application>
 

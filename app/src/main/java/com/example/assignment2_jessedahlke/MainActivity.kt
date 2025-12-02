@@ -71,7 +71,7 @@ class MainActivity : ComponentActivity() {
                             }
                         },
                         onImplicitClick = {
-                            // implicit intent — make sure the action matches your manifest!
+
                             val intent = Intent("com.example.assignment2_jessedahlke.ACTION_VIEW_CHALLENGES")
                             startActivity(intent)
                         },
