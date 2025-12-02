@@ -2,21 +2,37 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.assignment2_jessedahlke">
 
+    <!-- 1) Define the custom dangerous permission -->
+    <permission
+        android:name="com.example.assignment2_jessedahlke.MSE412"
+        android:label="MSE412 custom permission"
+        android:description="@string/mse412_permission_description"
+        android:protectionLevel="dangerous" />
+
+    <!-- 2) Let the app request/use the permission at runtime -->
+    <uses-permission android:name="com.example.assignment2_jessedahlke.MSE412" />
+
     <application
         android:allowBackup="true"
         android:label="MobileChallengesApp"
         android:supportsRtl="true"
         android:theme="@style/Theme.Assignment2_JesseDahlke">
 
-        <activity android:name=".SecondActivity"
-            android:exported="true">
+        <!-- Protected exported SecondActivity
+             Note: the action below matches the implicit intent in your MainActivity exactly -->
+        <activity
+            android:name=".SecondActivity"
+            android:exported="true"
+            android:permission="com.example.assignment2_jessedahlke.MSE412">
             <intent-filter>
-                <action android:name="com.example.mobilechallengesapp.ACTION_VIEW_CHALLENGES" />
+                <action android:name="com.example.assignment2_jessedahlke.ACTION_VIEW_CHALLENGES" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".MainActivity"
+        <!-- MainActivity: single launcher -->
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,12 +40,11 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ImageActivity"
+        <!-- ImageActivity: keep exported but NOT a launcher -->
+        <activity
+            android:name=".ImageActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <!-- no launcher intent-filter here -->
         </activity>
     </application>
 

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Assignment2_JesseDahlke</string>
+    <string name="mse412_permission_description">Permission to open the MSE412 challenges activity</string>
+
 </resources>
